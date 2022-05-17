@@ -11,7 +11,8 @@ public class Service1 {
     var f = new FileWriter("db.txt", true);
     var b = new BufferedWriter(f);
     b.append(student.ToString());
-    b.newLine();
+    b.append(student.ToString());
+    b.append(student.ToString());
     b.close();
   }
 

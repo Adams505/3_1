@@ -2,12 +2,12 @@ import java.io.IOException;
 import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
- try{
+ 
     Scanner skan = new Scanner(System.in);
+   Service1 s = new Service1();
    String imie;
     String nazwisko;
     String urodzenie;
-    int wiek;
     int funkcja;
     System.out.println("Wybierz funkcję: \n"+
                 "1 - dodanie nowego studenta \n"+
@@ -26,15 +26,17 @@ class Main {
             Scanner skan3 = new Scanner(System.in);
             System.out.println("Podaj date urodzenia:");
             urodzenie = skan3.nextLine();
+            s.addStudent(new Student(imie, nazwisko, urodzenie));
           }break;
 
         case 2:
           {
-            
-          }
+            var students = s.getStudents();
+            for(Student current : students){
+              System.out.println(current.ToString());
+            }
+          }break;
       }
-   }catch (IOException e) {
    }
     
     }
-}
